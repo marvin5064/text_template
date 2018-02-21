@@ -14,6 +14,9 @@ type Data struct {
 
 func main() {
 	fmt.Println("Begin:")
+	defer func() {
+		fmt.Println("Done.")
+	}()
 	templateSample := `
 	current_total_array_number: {{ len (.) }}
 	{{ $total_number := len (.)}}
